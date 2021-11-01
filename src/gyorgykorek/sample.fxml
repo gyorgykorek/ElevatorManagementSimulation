@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="577.0" prefWidth="777.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.2-internal" fx:controller="gyorgykorek.Controller">
+    <children>
+        <MenuBar VBox.vgrow="NEVER">
+            <menus>
+                <Menu mnemonicParsing="false" text="Segítség">
+                    <items>
+                        <MenuItem fx:id="readme" mnemonicParsing="false" onAction="#readmeClick" text="Az alkalmazás dokumentációja" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="linkedin" mnemonicParsing="false" onAction="#linkedinOpen" text="LinkedIn profilom" />
+                        <MenuItem fx:id="gmail" mnemonicParsing="false" onAction="#emailSend" text="E-mail küldése" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="447.0" prefWidth="777.0" VBox.vgrow="ALWAYS">
+            <children>
+                <Slider fx:id="Slider1" blockIncrement="0.0" layoutX="27.0" layoutY="57.0" majorTickUnit="1.0" max="10.0" minorTickCount="0" orientation="VERTICAL" prefHeight="255.0" prefWidth="48.0" showTickLabels="true" showTickMarks="true">
+                    <cursor>
+                        <Cursor fx:constant="DISAPPEAR" />
+                    </cursor>
+                </Slider>
+                <Slider fx:id="Slider2" blockIncrement="0.0" layoutX="686.0" layoutY="57.0" majorTickUnit="1.0" max="10.0" minorTickCount="0" orientation="VERTICAL" prefHeight="255.0" prefWidth="48.0" showTickLabels="true" showTickMarks="true">
+                    <cursor>
+                        <Cursor fx:constant="DISAPPEAR" />
+                    </cursor>
+                </Slider>
+                <Separator layoutX="90.0" layoutY="46.0" orientation="VERTICAL" prefHeight="263.0" prefWidth="7.0" />
+                <Separator layoutX="655.0" layoutY="46.0" orientation="VERTICAL" prefHeight="263.0" prefWidth="7.0" />
+                <TextArea fx:id="logField" editable="false" layoutX="27.0" layoutY="362.0" prefHeight="156.0" prefWidth="712.0">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font></TextArea>
+
+                <Label layoutX="27.0" layoutY="25.0" text="1. Lift" />
+                <Label layoutX="678.0" layoutY="25.0" text="2. Lift" />
+                <TextField fx:id="actualfloorField" layoutX="278.0" layoutY="52.0" prefHeight="32.0" prefWidth="84.0" visible="true" />
+                <Label layoutX="108.0" layoutY="57.0" text="Hívás szintje:" />
+                <Label layoutX="108.0" layoutY="96.0" text="Személyek száma:" />
+                <TextField fx:id="actualpersonField" layoutX="278.0" layoutY="91.0" prefHeight="32.0" prefWidth="84.0" />
+                <Label layoutX="108.0" layoutY="135.0" text="Személyek össztömege:" />
+                <TextField fx:id="actualKG" layoutX="278.0" layoutY="130.0" prefHeight="32.0" prefWidth="84.0" />
+                <Label fx:id="CelLabel" layoutX="106.0" layoutY="216.0" text="Állomások" visible="false" />
+                <TextField fx:id="tfallomas1" layoutX="177.0" layoutY="209.0" prefHeight="32.0" prefWidth="29.0" visible="false">
+                    <font>
+                        <Font size="10.0" />
+                    </font></TextField>
+                <Button fx:id="btnLifthivas" layoutX="104.0" layoutY="173.0" mnemonicParsing="false" onAction="#liftHandleButtonClick" prefHeight="31.0" prefWidth="259.0" text="Lift hívása" />
+                <Button fx:id="btnAllomasmegadas" layoutX="104.0" layoutY="292.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="259.0" text="Állomás megadása" visible="false" />
+                <Separator layoutX="385.0" layoutY="46.0" orientation="VERTICAL" prefHeight="263.0" prefWidth="7.0" />
+                <TextArea fx:id="liftProcess" editable="false" layoutX="401.0" layoutY="51.0" prefHeight="255.0" prefWidth="240.0">
+                    <font>
+                        <Font size="11.0" />
+                    </font></TextArea>
+                <Label layoutX="104.0" layoutY="7.0" text="Utasítások:" textFill="#000000c5">
+                    <font>
+                        <Font size="25.0" />
+                    </font>
+                </Label>
+                <Label layoutX="401.0" layoutY="7.0" text="Lift működése:" textFill="#000000c5">
+                    <font>
+                        <Font size="25.0" />
+                    </font>
+                </Label>
+                <Label layoutX="29.0" layoutY="320.0" text="LOG:" textFill="#000000c5">
+                    <font>
+                        <Font size="25.0" />
+                    </font>
+                </Label>
+                <Label layoutX="109.0" layoutY="75.0" text="0-10 között! (MAX 10)" textFill="RED">
+                    <font>
+                        <Font size="10.0" />
+                    </font>
+                </Label>
+                <Label layoutX="109.0" layoutY="116.0" text="1-5 között! (MAX 5)" textFill="RED">
+                    <font>
+                        <Font size="10.0" />
+                    </font>
+                </Label>
+                <Label layoutX="109.0" layoutY="155.0" text="1-999 között! (MAX 999)" textFill="RED">
+                    <font>
+                        <Font size="10.0" />
+                    </font>
+                </Label>
+                <Label fx:id="allomasNoticeLabel" layoutX="109.0" layoutY="243.0" text="0-10 között! (MAX 10)" textFill="RED" visible="false">
+                    <font>
+                        <Font size="10.0" />
+                    </font>
+                </Label>
+                <Label layoutX="723.0" layoutY="174.0" rotate="-90.0" text="szint" textFill="#1a0375">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="59.0" layoutY="174.0" rotate="90.0" text="szint" textFill="#1a0375">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="88.0" layoutY="523.0" text="A programot Korek György készítette a 'Műszaki Logisztika' című tárgy feladataként." textAlignment="CENTER" />
+                <Label layoutX="712.0" layoutY="523.0" text="ver. 1.0.0" />
+                <Button layoutX="13.0" layoutY="52.0" mnemonicParsing="false" opacity="0.0" prefHeight="263.0" prefWidth="65.0" />
+                <Button layoutX="664.0" layoutY="53.0" mnemonicParsing="false" opacity="0.0" prefHeight="263.0" prefWidth="65.0" />
+                <TextField fx:id="tfallomas2" layoutX="217.0" layoutY="209.0" prefHeight="32.0" prefWidth="29.0" visible="false">
+                    <font>
+                        <Font size="10.0" />
+                    </font></TextField>
+                <TextField fx:id="tfallomas3" layoutX="258.0" layoutY="209.0" prefHeight="32.0" prefWidth="29.0" visible="false">
+                    <font>
+                        <Font size="10.0" />
+                    </font></TextField>
+                <TextField fx:id="tfallomas4" layoutX="298.0" layoutY="209.0" prefHeight="32.0" prefWidth="29.0" visible="false">
+                    <font>
+                        <Font size="10.0" />
+                    </font></TextField>
+                <TextField fx:id="tfallomas5" layoutX="335.0" layoutY="209.0" prefHeight="32.0" prefWidth="29.0" visible="false">
+                    <font>
+                        <Font size="10.0" />
+                    </font></TextField>
+                <Label fx:id="allomas1label" layoutX="164.0" layoutY="217.0" text="1:" textFill="#116f00" visible="false" />
+                <Label fx:id="allomas2label" layoutX="206.0" layoutY="216.0" text="2:" textFill="#116f00" visible="false" />
+                <Label fx:id="allomas3label" layoutX="246.0" layoutY="217.0" text="3:" textFill="#116f00" visible="false" />
+                <Label fx:id="allomas4label" layoutX="287.0" layoutY="216.0" text="4:" textFill="#116f00" visible="false" />
+                <Label fx:id="allomas5label" layoutX="326.0" layoutY="216.0" text="5:" textFill="#116f00" visible="false" />
+                <Button fx:id="btnLifthivas1" layoutX="104.0" layoutY="251.0" mnemonicParsing="false" onAction="#allomasMegadasClick" prefHeight="31.0" prefWidth="259.0" text="Állomások megadása" />
+                <Button fx:id="btnLifthivas11" layoutX="202.0" layoutY="292.0" mnemonicParsing="false" onAction="#returner" prefHeight="31.0" prefWidth="65.0" text="Újra" visible="false " />
+                <Button fx:id="processClear" layoutX="611.0" layoutY="52.0" mnemonicParsing="false" onAction="#processclearClick" prefHeight="17.0" prefWidth="29.0" text="🗑" textFill="#f80000" />
+                <Button fx:id="logclearBtn" layoutX="709.0" layoutY="363.0" mnemonicParsing="false" onAction="#logclearClick" prefHeight="25.0" prefWidth="29.0" text="🗑" textFill="RED" />
+            <GridPane layoutX="156.0" layoutY="331.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+            </children>
+        </AnchorPane>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+    </children>
+</VBox>

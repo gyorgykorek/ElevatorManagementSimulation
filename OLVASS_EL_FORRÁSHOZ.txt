@@ -1,0 +1,30 @@
+Forrás felépítése (Kész programom forrása: JAVAFX-ELEVATOR-SOURCE könyvtárban)
+
+Main.java: statikus változókat itt vettem fel, FXML indításáért felel
+Controller.java: sample.fxml fájl kezeléséért felel, valamint itt hajtódnak végre a lényegi metódusok
+Person.java: utasok itt vannak eltárolva objektumként
+Elevator.java: 2 lift itt van eltárolva objektumként
+sample.fxml: a kezelőfelület front-end kódja
+
+Amennyiben szeretné megnyitni a projectet a Tanár Úr, javaslom:
+IDE: InteliJ Community Version 2019.02.04 / vagy 2019.03
+JDK: 1.8.0_231 (https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html)
+
+Ezt követően a JavaFx felépítése miatt szükség lehet apróbb beállításokra:
+File -> Project Structure -> Project (ellenőrizzük, hogy 1.8.0_231 -es SDK-t használja az IDE, valamint a Project Language Level:8 legyen)
+Modules -> Dependencies (ellenőrizzük, hogy 1.8.0_231 -es SDK-t használja az IDE)
+
+Amennyiben ez mind teljesül, futtaható IDE segítségével a forrás.
+
+Természetesen NetBeans, Eclipse alatt is beüzemelhető, de kizárólag InteliJ alatt fejlesztettem a programot, így magabiztosan ennek használata esetén tudok segíteni.
+_______________________________________________________________________________________________________________________________________
+
++INFORMÁCIÓ:
+Csatoltam a beadandóhoz, a kezdetleges command-line alapú java forrását a programomnak:
+Úgy gondolom:
+-ebből egyszerűbb és átláthatóbb a program működése és forrásának megértése
+
+Arra kérem Tanár Urat,
+-hogy a command-line forrást ennek tükrében tekintse meg, amikor késznek gondoltam összerakni a kezelőfelülettel,
+a fejlesztés további szakaszait és a hibajavításokat már a JavaFx alapú programban végeztem el, így több exeption kezelést tartalmaz amit a végleges program már igen.
+Így a beadandóm valódi értékét úgy gondolom az adja, ez csak segítség az értékeléshez és a program megértéséhez, amolyan flow check-nek alkalmas.
